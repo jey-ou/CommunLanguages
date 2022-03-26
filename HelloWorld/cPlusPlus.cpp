@@ -1,5 +1,8 @@
-include <std.h>
+#include <iostream>
+using namespace std;
 
-void main (*argc, *argv[]){
-  fprint("Hello World")
+int main (){
+  fprint("Hello World");
+  
+  return 0;
  }
