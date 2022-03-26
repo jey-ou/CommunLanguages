@@ -2,7 +2,7 @@
 using namespace std;
 
 int main (){
-  fprint("Hello World");
+  cout << "Hello World";
   
   return 0;
  }
