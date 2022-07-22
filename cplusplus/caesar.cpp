@@ -32,6 +32,7 @@ int berekendeFreq[26];
 
 int main(){
     string str = "ab.1CDm";
+    string zin = "lrvmnir bpr sumvbwvr jx bpr lmiwv yjeryrkbi jx qmbm wi bpr xjvni mkd ymibrut jx irhx wi bpr riirkvr jx ymbinlmtmipw utn qmumbr dj w ipmhh but bj rhnvwdmbr bpr yjeryrkbi jx bpr qmbm mvvjudwko bj yt wkbrusurbmbwjk lmird jk xjubt trmui jx ibndt";
     string s2;
     cout<< "test versleutelen ontcijferen"<< endl;
       
@@ -46,6 +47,12 @@ int main(){
 
     s2 = decodeCeasar(4,s2);
     cout<< "klare tekst: "<< s2 << endl;
+
+    for (int i=1; i<26;i++){
+        cout<< "brute force "<< i << endl;
+        s2 = decodeCeasar(i,onlyTxt(makeUpperString(zin)));
+        cout<< "klare tekst: "<< s2 << endl;
+    }
 
     return 0;
 }
@@ -63,12 +70,14 @@ string encodeCeasar (int key, string str ){ //671 //674 //861  //875  //241
 
     s2 = onlyTxt(str);
     s2 = makeUpperString(s2);
+    //cout << s2 << endl;
 
     aantalCh = s2.size();
 
     for(i = 0; i<aantalCh; i++){
         c=s2.at(i);
-        chgetal = ((int) c - (int) 'A' + key) % 26;
+        chgetal = ((int) c - (int) 'A' + key +26) % 26;
+        //cout<< chgetal <<" " ;
         chgetal = chgetal + (int) 'A';
         newString += (char) chgetal;
         
